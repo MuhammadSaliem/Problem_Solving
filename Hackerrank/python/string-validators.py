@@ -1,12 +1,9 @@
+# https://www.hackerrank.com/challenges/string-validators/problem?isFullScreen=true&h_r=next-challenge&h_v=zen
+# easy
+# string
+
 if __name__ == '__main__':
     s = input()
-    if s.isalnum():
-        print(True)
-    if s.isalpha():
-        print(True)
-    if s.isdigit():
-        print(True)
-    if s.islower():
-        print(True)
-    if s.isupper():
-        print(True)
+
+for method in [str.isalnum, str.isalpha, str.isdigit, str.islower, str.isupper]:
+    print(any(method(c) for c in s))
