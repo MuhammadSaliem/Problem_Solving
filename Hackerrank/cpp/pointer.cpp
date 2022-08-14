@@ -1,22 +1,22 @@
-// https://www.hackerrank.com/challenges/c-tutorial-functions/problem?isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+// https://www.hackerrank.com/challenges/c-tutorial-pointer/problem?isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
-#include <iostream>
-#include <cstdio>
-using namespace std;
+#include <stdio.h>
+#include <cmath>
 
-/*
-Add `int max_of_four(int a, int b, int c, int d)` here.
-*/
-int max_of_four(int a, int b, int c, int d)
-{
-    return max(max(a, b), max(c, d));
+void update(int *a,int *b) {
+    int tempA= *a;
+    *a = *a + *b;
+    *b = abs(tempA - *b);
+    // Complete this function    
 }
 
 int main() {
-    int a, b, c, d;
-    scanf("%d %d %d %d", &a, &b, &c, &d);
-    int ans = max_of_four(a, b, c, d);
-    printf("%d", ans);
+    int a, b;
+    int *pa = &a, *pb = &b;
     
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
     return 0;
 }
